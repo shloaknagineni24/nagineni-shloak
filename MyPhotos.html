@@ -1,0 +1,55 @@
+<html>
+<head>
+   <style>
+       img{
+           height: 70vh;
+       }
+    </style>
+    <script>
+        //Global program remembers the posistion of the list
+         //intialize to 0 but we can increment from the from the functions
+        var topCounter= 0;
+        var bottomCounter = 0;
+
+
+        function nextTop(){
+            //create a list of all the shirts
+            if (topCounter == 9){
+            topCounter = 0
+            }
+            else
+                topCounter = topCounter+1
+
+            var shirts = ["1.JPG","2.JPG","3.JPG", "4.JPG","5.JPG","6.jpeg","7.jpeg","8.jpeg","9.jpeg","10.jpeg"]
+            //pick the next shirt in the list
+            document.getElementById("top").src = shirts[topCounter];
+            bottomCounter = topCounter
+
+        }
+        function previous(){
+
+            if(bottomCounter == 0){
+                bottomCounter = 9
+            }
+
+            else
+            bottomCounter = bottomCounter -1
+
+             var pants = ["1.JPG","2.JPG","3.JPG", "4.JPG","5.JPG","6.jpeg","7.jpeg","8.jpeg","9.jpeg","10.jpeg"]
+        //pick the previous pant in the list
+            document.getElementById("top").src = pants[bottomCounter];
+            topCounter = bottomCounter
+        }
+
+
+    </script>
+</head>
+<body>
+    <img id = "top" src = "1.JPG">
+    <button onClick = "nextTop()">next</button>
+    <button onClick = "previous()">Previous</button>
+    <br/>
+
+
+</body>
+</html>
